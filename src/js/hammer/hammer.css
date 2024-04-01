@@ -1,0 +1,7 @@
+.goblin-game:hover {
+    cursor: url('/src/js/hammer/img/hammer2.png'), auto;
+}
+
+.goblin-game:active {
+    cursor: url('/src/js/hammer/img/hammer_active2.png'), auto;
+}
