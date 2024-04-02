@@ -2,29 +2,37 @@ export { counter };
 
 class counter {
     constructor () {
-    this.deadCounter = parseInt(document.getElementById('dead').textContent);
-    this.lostCounter = parseInt(document.getElementById('lost').textContent);
+    this.dead = document.getElementById('dead');
+    this.lost = document.getElementById('lost');    
+    this.deadCounter = parseInt(this.dead.textContent);
+    this.lostCounter = parseInt(this.lost.textContent);
     this.hole = document.getElementsByClassName('hole');
 }
 
 handleEvent() {
-    document.addEventListener('click', function(event) {
-
+    document.addEventListener('click', (event) => {
+        
+        if (event.target.id) {
+        
         let clickHole = document.getElementById(`${event.target.id}`);
 
+
+
         if (clickHole.classList.contains( 'hole_has-mole' )) {
-            deadCounter += 1;
-            dead.textContent = (`${deadCounter}`);
+
+            this.deadCounter += 1;
+            this.dead.textContent = (`${this.deadCounter}`);
         } else {
-            lostCounter +=1;
-            lost.textContent = (`${lostCounter}`);
+            this.lostCounter +=1;
+            this.lost.textContent = (`${this.lostCounter}`);
         }
-        if (deadCounter == 10 || lostCounter == 5) {
-            checkStatus();
-            deadCounter = 0;
-            lostCounter = 0;
-            dead.textContent = `${deadCounter}`;
-            lost.textContent = `${lostCounter}`;
+        if (this.deadCounter == 10 || this.lostCounter == 5) {
+            this.checkStatus();
+            this.deadCounter = 0;
+            this.lostCounter = 0;
+            this.dead.textContent = `${this.deadCounter}`;
+            this.lost.textContent = `${this.lostCounter}`;
+        }
         }
 })}
 

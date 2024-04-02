@@ -1,3 +1,4 @@
+import './goblin-game.css'
 export { GoblinGame };
 
 class GoblinGame {

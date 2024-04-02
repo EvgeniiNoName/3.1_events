@@ -1,5 +1,6 @@
 import { GoblinGame } from '../js/goblin-game/goblin-game.js';
-import { counter } from '../js/counter/counter.js'
+import { counter } from '../js/counter/counter.js';
+import '../js/hammer/hammer.js';
 
 
 const game = new GoblinGame(document.querySelector('.goblin-game'));
@@ -11,7 +12,7 @@ const c = new counter();
 game.addField();
 game.startHole();
 
-
-c.handleEvent();
 c.checkStatus();
+c.handleEvent();
+
 
